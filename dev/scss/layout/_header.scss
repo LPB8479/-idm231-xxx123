@@ -1,0 +1,34 @@
+/* =============
+    Header
+============= */
+header {
+    padding: 0 var(- -rhythm);
+    & div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        & section {
+            align-items: center !important;
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            padding: 0;
+            & h1 {
+                font-size: 1.875rem;
+                font-weight: 800;
+                & a {
+                    color: var(--accentBlue50) !important;
+                    text-decoration: none;
+                }
+            }
+            & i{
+                padding: 10px;
+                border: 1px solid #CCC;
+                border-radius: 10px;
+            }
+            &:hover{
+                cursor:pointer;
+            }
+        }
+    }
+}

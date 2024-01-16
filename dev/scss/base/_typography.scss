@@ -1,0 +1,43 @@
+/* =============
+    Typography
+============= */
+* {
+    color: var(--lightModePrimary);
+    line-height: 1.4;
+}
+a:link{color: var(--accentBlue60);}
+a:visited{color: var(--accentBlue50);}
+a:active, a:hover{color: var(--accentBlue70);}
+
+body { font-family: 'Open Sans', Helvetica, sans-serif; }
+
+p{
+    //16px
+    font-size: 1rem;
+    font-weight: 400;
+    &.year{
+        font-weight: 300;
+        //14px
+        font-size: 0.875rem;
+    }
+}
+
+h1{
+    //24px
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+h2{
+    //20px
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+h3{
+    //16px
+    font-size: 1rem;
+    font-weight: 600;
+}
+.noLink a{
+    color: var(--lightModePrimary) !important;
+    text-decoration: none;
+}

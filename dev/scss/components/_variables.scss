@@ -1,0 +1,38 @@
+/* =============
+    Variables
+============= */
+
+// Colors vars
+:root {
+  --lightModeBkg: white;
+  --lightModePrimary: #2b2d2f;
+  --darkModeBkg: #212121;
+  --darkModePrimary: white;
+
+  /*accent colors*/
+  --accentRed50: #da2e25;
+  --accentBlue50: #2641d9;
+
+  /*shades*/
+  --accentRed10: #2c0907;
+  --accentRed20: #57120f;
+  --accentRed30: #831C16;
+  --accentRed40: #ae251e;
+  --accentBlue10: #080d2b;
+  --accentBlue20: #0f1a57;
+  --accentBlue30: #172782;
+  --accentBlue40: #1e34ae;
+  
+  /*tints*/
+  --accentRed60: #e15851;
+  --accentRed70: #e9827c;
+  --accentRed80: #f0aba8;
+  --accentRed90: #f8d5d3;
+  --accentBlue60: #5167e1;
+  --accentBlue70: #7d8de8;
+  --accentBlue80: #a8b3f0;
+  --accentBlue90: #d4d9f7;
+
+  /*other*/
+  --rhythm: 1.5rem;
+}

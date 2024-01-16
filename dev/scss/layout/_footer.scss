@@ -1,0 +1,13 @@
+/* =============
+    Footer
+============= */
+footer{
+    text-align: center;
+    margin-top: var(--rhythm);
+    & img{
+        height:22px !important;
+        width:22px !important;
+        margin-left:3px;
+        vertical-align:text-bottom;
+    }
+}
