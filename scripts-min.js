@@ -121,10 +121,21 @@ function showFruit(fruit) {
         }
         else {
             div.classList.remove('selected');
-            div.style.width = '80px';
-    };
+            div.style.width = '100px';
+        };
     })
+    document.getElementById('help').style.display = 'none'
     //sound
+}
+function reset() {
+    const divs = document.querySelectorAll('.fruitCard');
+    divs.forEach((div) => {
+        div.style.width = '100px';
+        if (div.classList.contains('selected')) {
+            div.classList.remove('selected');
+        }
+    })
+    document.getElementById('help').style.display = 'block';
 }
 
 //Create content
@@ -132,13 +143,14 @@ let content = document.getElementById('content');
 //make content take up remaining height because i'm fed up with css
 content.style.height = window.innerHeight - 80 + 'px';
 
+let fruitsDiv = document.getElementById('fruits');
 data.forEach((sign) => {
     //create div
     const div = document.createElement('div');
     div.id = sign.fruit;
     div.classList.add('fruitCard');
     div.style.backgroundColor = sign.background;
-    content.appendChild(div);
+    fruitsDiv.appendChild(div);
 
     //create text label
     const para = document.createElement('p');
@@ -224,4 +236,5 @@ if (form) {
     document.getElementById('inputForm').addEventListener('submit', handleSubmit, false);
 }
 
-//
+//help button
+document.getElementById('info').addEventListener('click', reset, false);
