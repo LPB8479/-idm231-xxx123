@@ -111,7 +111,6 @@ function dateValidation(month, day) {
 }
 
 function showFruit(fruit) {
-    //not the simplest way but it works (I hope)
     let selection;
     document.querySelectorAll('.fruitCard').forEach((div) => {
         if (div.id === fruit) {
@@ -124,7 +123,7 @@ function showFruit(fruit) {
         };
     })
     document.getElementById('help').style.display = 'none'
-    //sound
+    //add sound stuff here
 }
 function reset() {
     divs = document.querySelectorAll('.fruitCard').forEach((div) => {
