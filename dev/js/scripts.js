@@ -113,8 +113,7 @@ function dateValidation(month, day) {
 function showFruit(fruit) {
     //not the simplest way but it works (I hope)
     let selection;
-    const divs = document.querySelectorAll('.fruitCard');
-    divs.forEach((div) => {
+    document.querySelectorAll('.fruitCard').forEach((div) => {
         if (div.id === fruit) {
             div.classList.add('selected');
             div.style.width = window.innerWidth - 1100 + 'px';
@@ -128,8 +127,7 @@ function showFruit(fruit) {
     //sound
 }
 function reset() {
-    const divs = document.querySelectorAll('.fruitCard');
-    divs.forEach((div) => {
+    divs = document.querySelectorAll('.fruitCard').forEach((div) => {
         div.style.width = '100px';
         if (div.classList.contains('selected')) {
             div.classList.remove('selected');
@@ -139,9 +137,8 @@ function reset() {
 }
 
 //Create content
-let content = document.getElementById('content');
 //make content take up remaining height because i'm fed up with css
-content.style.height = window.innerHeight - 80 + 'px';
+document.getElementById('content').style.height = window.innerHeight - 80 + 'px';
 
 let fruitsDiv = document.getElementById('fruits');
 data.forEach((sign) => {
