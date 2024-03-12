@@ -110,24 +110,34 @@ function dateValidation(month, day) {
     return dateCheck;
 }
 
-function showFruit(zodiac) {
-
+function showFruit(fruit) {
+    //not the simplest way but it works (I hope)
+    let selection;
+    const divs = document.querySelectorAll('.fruitCard');
+    divs.forEach((div) => {
+        if(div.id === fruit) {div.classList.add('selected')}
+        else {div.classList.remove('selected')};
+    })
+    //sound
 }
 
 //Create content
-let content = document.getElementById("content");
+let content = document.getElementById('content');
 //make content take up remaining height because i'm fed up with css
-content.style.height = window.innerHeight - 80 + "px";
+content.style.height = window.innerHeight - 80 + 'px';
 
 data.forEach((sign) => {
-    const div = document.createElement("div");
-    div.id = sign.name;
-    div.classList.add("fruitCard");
+    const div = document.createElement('div');
+    div.id = sign.fruit;
+    div.classList.add('fruitCard');
     div.style.backgroundColor = sign.background;
     content.appendChild(div);
     const img = new Image();
-    img.setAttribute("src", sign.image);
+    img.setAttribute('src', sign.image);
     div.appendChild(img);
+
+    //doesn't work
+    // div.addEventListener('click', showFruit(div.id), false);
 });
 
 //Form Submission
@@ -160,9 +170,6 @@ function handleSubmit(event) {
 
     //Get sign from month and day
     let astrologicalSign;
-    console.log(`${month}/${day}`);
-    console.log(month === 6);
-    console.log(typeof month)
     if ((month === 12 && day >= 22) || (month === 1 && day <= 19)) {
         astrologicalSign = 'Capricorn'
     } else if ((month === 11 && day >= 22) || (month === 12 && day <= 21)) {
@@ -188,8 +195,15 @@ function handleSubmit(event) {
     } else if ((month === 1 && day >= 20) || (month === 2 && day <= 18)) {
         astrologicalSign = 'Aquarius'
     }
-    showFruit(astrologicalSign);
 
+    //get fruit from sign
+    let fruit;
+    data.forEach((sign) => {
+        if (sign.name === astrologicalSign) {
+            fruit = sign.fruit
+        }
+    });
+    showFruit(fruit);
 }
 
 if (form) {
