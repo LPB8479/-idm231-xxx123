@@ -1,7 +1,7 @@
-# To Do List
+# To Do List 3/11
 - [ ] help screen
 - [ ] different font?
 - [ ] audio
 - [ ] transitions
-- [ ] fix eventlistener for clicking on divs
+- [x] fix eventlistener for clicking on divs
 - [ ] additional content to show on selection?

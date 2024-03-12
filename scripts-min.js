@@ -117,7 +117,7 @@ function showFruit(fruit) {
     divs.forEach((div) => {
         if (div.id === fruit) {
             div.classList.add('selected');
-            div.style.width = window.innerWidth - 880 + 'px';
+            div.style.width = window.innerWidth - 1100 + 'px';
         }
         else {
             div.classList.remove('selected');
@@ -150,9 +150,7 @@ data.forEach((sign) => {
     const img = new Image();
     img.setAttribute('src', sign.image);
     div.appendChild(img);
-
-    //doesn't work
-    // div.addEventListener('click', showFruit(div.id), false);
+    div.addEventListener('click', () => showFruit(sign.fruit), false)
 });
 
 //Form Submission
@@ -160,6 +158,7 @@ const form = document.querySelector('form');
 const errorList = document.querySelector('.errors');
 
 function handleSubmit(event) {
+    //error check
     event.preventDefault();
     const month = parseInt(document.getElementById('monthSelect').value);
     const day = parseInt(document.getElementById('daySelect').value);
@@ -224,3 +223,5 @@ function handleSubmit(event) {
 if (form) {
     document.getElementById('inputForm').addEventListener('submit', handleSubmit, false);
 }
+
+//
