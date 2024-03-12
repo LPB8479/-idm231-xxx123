@@ -1,9 +1,22 @@
 /* =============
     Typography
 ============= */
-*{
+* {
     font: 1em sans-serif;
 }
-li{
+
+li {
     color: white !important;
+}
+
+ul.blankList {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.fruitLabel {
+    display: none;
+    font-weight:bolder;
+    font-size: 40px;
 }

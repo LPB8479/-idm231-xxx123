@@ -3,85 +3,85 @@ const data = [
         "name": "Aries",
         "audio": "placeholder",
         "background": "#BDD8F6",
-        "fruit": "pineapple",
-        "image": "assets/images/svg/pineapple.svg"
+        "fruit": "Pineapple",
+        "image": "assets/images/png/pineapple.png"
     },
     {
         "name": "Taurus",
         "audio": "placeholder",
         "background": "#DFF4C3",
-        "fruit": "cherry",
-        "image": "assets/images/svg/cherries.svg"
+        "fruit": "Cherry",
+        "image": "assets/images/png/cherries.png"
     },
     {
         "name": "Gemini",
         "audio": "placeholder",
         "background": "#F6BDBD",
-        "fruit": "kiwi",
-        "image": "assets/images/svg/kiwi.svg"
+        "fruit": "Kiwi",
+        "image": "assets/images/png/kiwi.png"
     },
     {
         "name": "Cancer",
         "audio": "placeholder",
         "background": "#A6AFE1",
-        "fruit": "lemon",
-        "image": "assets/images/svg/lemon.svg"
+        "fruit": "Lemon",
+        "image": "assets/images/png/lemon.png"
     },
     {
         "name": "Leo",
         "audio": "placeholder",
         "background": "#C3F4F2",
-        "fruit": "strawberry",
-        "image": "assets/images/svg/strawberry.svg"
+        "fruit": "Strawberry",
+        "image": "assets/images/png/strawberry.png"
     },
     {
         "name": "Virgo",
         "audio": "placeholder",
         "background": "#F2E7C2",
-        "fruit": "mango",
-        "image": "assets/images/svg/mango.svg"
+        "fruit": "Mango",
+        "image": "assets/images/png/mango.png"
     },
     {
         "name": "Libra",
         "audio": "placeholder",
         "background": "#BDD8F6",
-        "fruit": "apple",
-        "image": "assets/images/svg/apple.svg"
+        "fruit": "Apple",
+        "image": "assets/images/png/apple.png"
     },
     {
         "name": "Scoprio",
         "audio": "placeholder",
         "background": "#DFF4C3",
-        "fruit": "peach",
-        "image": "assets/images/svg/peach.svg"
+        "fruit": "Peach",
+        "image": "assets/images/png/peach.png"
     },
     {
         "name": "Sagittarius",
         "audio": "placeholder",
         "background": "#F2E7C2",
-        "fruit": "grape",
-        "image": "assets/images/svg/grapes.svg"
+        "fruit": "Grape",
+        "image": "assets/images/png/grapes.png"
     },
     {
         "name": "Capricorn",
         "audio": "placeholder",
         "background": "#A6AFE1",
-        "fruit": "banana",
-        "image": "assets/images/svg/banana.svg"
+        "fruit": "Banana",
+        "image": "assets/images/png/banana.png"
     },
     {
         "name": "Aquarius",
         "audio": "placeholder",
         "background": "#C3F4F2",
-        "fruit": "watermelon",
-        "image": "assets/images/svg/watermelon.svg"
+        "fruit": "Watermelon",
+        "image": "assets/images/png/watermelon.png"
     },
     {
         "name": "Pisces",
         "audio": "placeholder",
         "background": "#F6BDBD",
-        "fruit": "blueberry",
-        "image": "assets/images/svg/blueberry.svg"
+        "fruit": "Blueberry",
+        "image": "assets/images/png/blueberry.png"
     }
 ];
 
@@ -115,8 +115,14 @@ function showFruit(fruit) {
     let selection;
     const divs = document.querySelectorAll('.fruitCard');
     divs.forEach((div) => {
-        if(div.id === fruit) {div.classList.add('selected')}
-        else {div.classList.remove('selected')};
+        if (div.id === fruit) {
+            div.classList.add('selected');
+            div.style.width = window.innerWidth - 880 + 'px';
+        }
+        else {
+            div.classList.remove('selected');
+            div.style.width = '80px';
+    };
     })
     //sound
 }
@@ -127,11 +133,20 @@ let content = document.getElementById('content');
 content.style.height = window.innerHeight - 80 + 'px';
 
 data.forEach((sign) => {
+    //create div
     const div = document.createElement('div');
     div.id = sign.fruit;
     div.classList.add('fruitCard');
     div.style.backgroundColor = sign.background;
     content.appendChild(div);
+
+    //create text label
+    const para = document.createElement('p');
+    para.textContent = sign.fruit;
+    para.classList.add('fruitLabel');
+    div.appendChild(para);
+
+    //create image
     const img = new Image();
     img.setAttribute('src', sign.image);
     div.appendChild(img);

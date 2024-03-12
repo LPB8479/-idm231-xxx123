@@ -325,12 +325,6 @@ template {
           box-sizing: border-box;
 }
 
-ul.blankList {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
 body {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -349,6 +343,7 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  height: var(--contentHeight);
 }
 
 .fruitCard {
@@ -370,6 +365,14 @@ body {
 .fruitCard img {
   height: 72px;
   width: 72px;
+}
+
+.selected > .fruitLabel {
+  display: block;
+}
+.selected img {
+  width: 200px;
+  height: 200px;
 }
 
 header {
@@ -402,10 +405,6 @@ form > * {
   padding: 12px 14px;
 }
 
-.selected {
-  width: 200px !important;
-}
-
 /* =============
     Typography
 ============= */
@@ -415,6 +414,18 @@ form > * {
 
 li {
   color: white !important;
+}
+
+ul.blankList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.fruitLabel {
+  display: none;
+  font-weight: bolder;
+  font-size: 40px;
 }
 
 /* =============
