@@ -1,7 +1,7 @@
 # To Do List
-- [ ] style help screen
+- [x] style help screen
 - [ ] different font?
-- [ ] audio
+- [x] audio
 - [ ] transitions (transition.js or jquery)
 - [x] fix eventlistener for clicking on divs
 - [ ] **additional content to show on selection**
