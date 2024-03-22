@@ -1,84 +1,84 @@
 const data = [
     {
         "name": "Aries",
-        "audio": "placeholder",
+        "audio": "assets/audio/tone01.mp3",
         "background": "#BDD8F6",
         "fruit": "Pineapple",
         "image": "assets/images/png/pineapple.png"
     },
     {
         "name": "Taurus",
-        "audio": "placeholder",
+        "audio": "assets/audio/tone02.mp3",
         "background": "#DFF4C3",
         "fruit": "Cherry",
         "image": "assets/images/png/cherries.png"
     },
     {
         "name": "Gemini",
-        "audio": "placeholder",
+        "audio": "assets/audio/tone03.mp3",
         "background": "#F6BDBD",
         "fruit": "Kiwi",
         "image": "assets/images/png/kiwi.png"
     },
     {
         "name": "Cancer",
-        "audio": "placeholder",
+        "audio": "assets/audio/tone04.mp3",
         "background": "#A6AFE1",
         "fruit": "Lemon",
         "image": "assets/images/png/lemon.png"
     },
     {
         "name": "Leo",
-        "audio": "placeholder",
+        "audio": "assets/audio/tone05.mp3",
         "background": "#C3F4F2",
         "fruit": "Strawberry",
         "image": "assets/images/png/strawberry.png"
     },
     {
         "name": "Virgo",
-        "audio": "placeholder",
+        "audio": "assets/audio/tone06.mp3",
         "background": "#F2E7C2",
         "fruit": "Mango",
         "image": "assets/images/png/mango.png"
     },
     {
         "name": "Libra",
-        "audio": "placeholder",
+        "audio": "assets/audio/tone07.mp3",
         "background": "#BDD8F6",
         "fruit": "Apple",
         "image": "assets/images/png/apple.png"
     },
     {
         "name": "Scoprio",
-        "audio": "placeholder",
+        "audio": "assets/audio/tone08.mp3",
         "background": "#DFF4C3",
         "fruit": "Peach",
         "image": "assets/images/png/peach.png"
     },
     {
         "name": "Sagittarius",
-        "audio": "placeholder",
+        "audio": "assets/audio/tone09.mp3",
         "background": "#F2E7C2",
         "fruit": "Grape",
         "image": "assets/images/png/grapes.png"
     },
     {
         "name": "Capricorn",
-        "audio": "placeholder",
+        "audio": "assets/audio/tone10.mp3",
         "background": "#A6AFE1",
         "fruit": "Banana",
         "image": "assets/images/png/banana.png"
     },
     {
         "name": "Aquarius",
-        "audio": "placeholder",
+        "audio": "assets/audio/tone11.mp3",
         "background": "#C3F4F2",
         "fruit": "Watermelon",
         "image": "assets/images/png/watermelon.png"
     },
     {
         "name": "Pisces",
-        "audio": "placeholder",
+        "audio": "assets/audio/tone12.mp3",
         "background": "#F6BDBD",
         "fruit": "Blueberry",
         "image": "assets/images/png/blueberry.png"
@@ -98,11 +98,11 @@ function dateValidation(event) {
         option31.style.display = 'none';
     } else {
         option30.style.display = 'block';
-        option31.style.display = 'block';    }
+        option31.style.display = 'block';
+    }
 }
 
 function showFruit(fruit) {
-    let selection;
     document.querySelectorAll('.fruitCard').forEach((div) => {
         if (div.id === fruit) {
             div.classList.add('selected');
@@ -114,7 +114,33 @@ function showFruit(fruit) {
         };
     })
     document.getElementById('help').style.display = 'none'
-    //add sound stuff here
+
+    //audio
+    let audioSrc;
+    data.forEach((sign) => {
+        if (sign.fruit === fruit) {
+            audioSrc = sign.audio
+        }
+    });
+    const audioElement = new Audio(audioSrc);
+    const audioPlayer = document.getElementById('audioPlayer');
+
+    function playAudio(audioElement, src) {
+        if (audioElement && !audioElement.paused) {
+            audioElement.pause();
+            audioElement.currentTime = 0;
+        }
+        audioElement.src = src;
+        audioElement.play();
+    }
+
+    audioElement?.addEventListener('canplaythrough', (event) => {
+
+            if (audioPlayer !== null) {
+                playAudio(audioPlayer, audioSrc);
+            }
+    });
+
 }
 function reset() {
     divs = document.querySelectorAll('.fruitCard').forEach((div) => {
@@ -124,6 +150,8 @@ function reset() {
         }
     })
     document.getElementById('help').style.display = 'block';
+    document.getElementById('monthSelect').selectedIndex = 0;
+    document.getElementById('daySelect').selectedIndex = 0;
 }
 
 //Create content
