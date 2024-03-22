@@ -49,7 +49,7 @@ const data = [
         "image": "assets/images/png/apple.png"
     },
     {
-        "name": "Scoprio",
+        "name": "Scorpio",
         "audio": "assets/audio/tone08.mp3",
         "background": "#DFF4C3",
         "fruit": "Peach",
