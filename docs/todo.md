@@ -8,4 +8,4 @@
 - [x] don't give option for invalid dates
 - [ ] `_header.scss` ln 12
 - [ ] hover interactions?
-- [ ] make hit area for help button larger (min 48x48)
+- [x] make hit area for help button larger (min 48x48)
