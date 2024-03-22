@@ -31,6 +31,7 @@ body {
     & img {
         height: 72px;
         width: 72px;
+        transition: width 0.4s, height 0.4s;
     }
 }
 

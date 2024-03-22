@@ -375,6 +375,8 @@ body {
 .fruitCard img {
   height: 72px;
   width: 72px;
+  -webkit-transition: width 0.4s, height 0.4s;
+  transition: width 0.4s, height 0.4s;
 }
 
 .selected > .fruitLabel {
