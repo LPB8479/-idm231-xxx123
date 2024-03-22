@@ -2,7 +2,7 @@
 - [x] style help screen
 - [ ] different font?
 - [x] audio
-- [ ] transitions (transition.js or jquery)
+- [x] transitions (transition.js or jquery)
 - [x] fix eventlistener for clicking on divs
 - [ ] **additional content to show on selection**
 - [x] don't give option for invalid dates

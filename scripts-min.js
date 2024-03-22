@@ -106,11 +106,14 @@ function showFruit(fruit) {
     document.querySelectorAll('.fruitCard').forEach((div) => {
         if (div.id === fruit) {
             div.classList.add('selected');
-            div.style.width = window.innerWidth - 1100 + 'px';
+            const fullWidth = window.innerWidth - 1100 + 'px';
+            $(div).animate({ width: fullWidth });
+            //dangit now I'm obsessed with jquery and need to look into it more
         }
         else {
             div.classList.remove('selected');
-            div.style.width = '100px';
+            $(div).animate({ width: '100px' });
+
         };
     })
     document.getElementById('help').style.display = 'none'
@@ -136,15 +139,15 @@ function showFruit(fruit) {
 
     audioElement?.addEventListener('canplaythrough', (event) => {
 
-            if (audioPlayer !== null) {
-                playAudio(audioPlayer, audioSrc);
-            }
+        if (audioPlayer !== null) {
+            playAudio(audioPlayer, audioSrc);
+        }
     });
 
 }
 function reset() {
     divs = document.querySelectorAll('.fruitCard').forEach((div) => {
-        div.style.width = '100px';
+        $(div).animate({ width: '100px' });
         if (div.classList.contains('selected')) {
             div.classList.remove('selected');
         }
@@ -230,7 +233,6 @@ function handleSubmit(event) {
     });
     showFruit(fruit);
 }
-
 if (form) {
     document.getElementById('inputForm').addEventListener('submit', handleSubmit, false);
 }
