@@ -412,6 +412,11 @@ ul.blankList {
   font-size: 40px;
 }
 
+h2 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
 /* =============
     Buttons
 ============= */
