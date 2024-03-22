@@ -5,7 +5,7 @@
 - [ ] transitions (transition.js or jquery)
 - [x] fix eventlistener for clicking on divs
 - [ ] **additional content to show on selection**
-- [ ] don't give option for invalid dates
+- [x] don't give option for invalid dates
 - [ ] `_header.scss` ln 12
 - [ ] hover interactions?
 - [ ] make hit area for help button larger (min 48x48)
