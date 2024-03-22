@@ -85,29 +85,20 @@ const data = [
     }
 ];
 
-function dateValidation(month, day) {
-    let dateCheck
-    switch (month) {
-        case 1:
-        case 3:
-        case 5:
-        case 7:
-        case 8:
-        case 10:
-        case 12:
-            dateCheck = day <= 31;
-            break;
-        case 2:
-            dateCheck = day <= 29;
-            break;
-        case 4:
-        case 6:
-        case 9:
-        case 11:
-            dateCheck = day <= 30;
-            break
-    }
-    return dateCheck;
+function dateValidation(event) {
+    const monthsWith30 = [4, 6, 9, 11];
+    const option30 = document.querySelector('[value="30"]');
+    const option31 = document.querySelector('[value="31"]');
+    const month = parseInt(event.target.value);
+    if (month === 2) {
+        option30.style.display = 'none';
+        option31.style.display = 'none';
+    } else if (monthsWith30.includes(month)) {
+        option30.style.display = 'block';
+        option31.style.display = 'none';
+    } else {
+        option30.style.display = 'block';
+        option31.style.display = 'block';    }
 }
 
 function showFruit(fruit) {
@@ -161,34 +152,18 @@ data.forEach((sign) => {
     div.addEventListener('click', () => showFruit(sign.fruit), false)
 });
 
-//Form Submission
+//Update form for month selected
+const monthSelect = document.getElementById('monthSelect');
+monthSelect.addEventListener('change', (event) => dateValidation(event), false);
+
+//Form Management
 const form = document.querySelector('form');
-const errorList = document.querySelector('.errors');
 
 function handleSubmit(event) {
     //error check
     event.preventDefault();
     const month = parseInt(document.getElementById('monthSelect').value);
     const day = parseInt(document.getElementById('daySelect').value);
-    const errors = [];
-    if (!dateValidation(month, day)) {
-        errors.push('Please input a valid date');
-    }
-    if (errors.length) {
-        errors.forEach((error) => {
-            const li = document.createElement('li');
-            const text = document.createTextNode(error);
-
-            li.appendChild(text);
-            console.log('errors', errors);
-            errorList.appendChild(li);
-            errorList.hidden = 0;
-        });
-        return false;
-    } else {
-        errorList.hidden = 1;
-        errorList.innerHTML = '';
-    }
 
     //Get sign from month and day
     let astrologicalSign;
