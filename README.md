@@ -1,3 +1,3 @@
-# idm221-nas367
- IDM221 Portfolio Project
+# idm231-nas367
+ IDM231 Zodiiac Project
 https://nsimon-idm231.netlify.app/
